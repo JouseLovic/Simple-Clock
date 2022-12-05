@@ -19,7 +19,7 @@ public class InitTempo extends Thread{
                 
                   while(PanelTemporizador.activatedTimer==true){
                           runTimer();
-                         Thread.sleep(90);
+                         Thread.sleep(900);
                   }
 
               } catch (Exception e) {
@@ -37,30 +37,26 @@ public class InitTempo extends Thread{
              hours += PanelTemporizador.hours;
         
       
-        if(PanelTemporizador.minutes==0){
-            if(PanelTemporizador.hours!=0){
+        if(PanelTemporizador.minutes==0 && PanelTemporizador.hours!=0){   
                  PanelTemporizador.minutes=60;
                  PanelTemporizador.hours--;
-              }
 
            }
             
-         if(PanelTemporizador.seconds==0){
-              if(PanelTemporizador.minutes != 0){
-                  PanelTemporizador.seconds=60;
+         if(PanelTemporizador.seconds==0 && PanelTemporizador.minutes != 0){
+                 PanelTemporizador.seconds=60;
                   PanelTemporizador.minutes--;
-               
-               }
          }
 
             PanelTemporizador.seconds--;
             
-            if(PanelTemporizador.seconds<10){
+              if(PanelTemporizador.seconds<10){
                  seconds = "0"+PanelTemporizador.seconds;
-           }
+               }
                 else{
                    seconds = ""+PanelTemporizador.seconds;
                  }
+
              if(PanelTemporizador.minutes<10){
               minutes = "0"+PanelTemporizador.minutes;
            }
